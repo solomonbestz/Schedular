@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<body>
+
+  <div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <div class="row error_msg">
+                <div class="col">{{ message }}</div>
+                </div>
+            {% endif %}
+            {% if message.tags == 'info' %}
+            <div class="row info_msg">
+            <div class="col">{{ message }}</div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
